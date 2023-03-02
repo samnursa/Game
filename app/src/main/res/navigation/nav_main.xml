@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/nav_home">
+
+    <include app:graph="@navigation/nav_home" />
+<!--    <include app:graph="@navigation/nav_favorite" />-->
+
+    <include-dynamic
+        android:id="@+id/nav_favorite"
+        app:moduleName="favorite"
+        app:graphResName="nav_favorite"/>
+
+    <include app:graph="@navigation/nav_setting" />
+</navigation>

@@ -1,0 +1,36 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Games" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_grey</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/light_grey</item>
+        <item name="colorOnPrimaryContainer">@color/dark_grey</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary_orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/light_orange</item>
+        <item name="colorOnSecondaryContainer">@color/dark_orange</item>
+
+        <!-- Ternary brand color. -->
+<!--        <item name="colorTertiary">@color/primary_orange</item>-->
+<!--        <item name="colorOnTertiary">@color/white</item>-->
+<!--        <item name="colorTertiaryContainer">@color/light_orange</item>-->
+<!--        <item name="colorOnTertiaryContainer">@color/dark_orange</item>-->
+
+        <!-- Error color. -->
+        <item name="colorError">@color/primary_red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/light_red</item>
+        <item name="colorOnErrorContainer">@color/dark_red</item>
+
+        <!-- Surface color. -->
+        <!--        <item name="colorSurface">@color/primary_orange</item>-->
+        <!--        <item name="colorOnSurfaceVariant">@color/primary_orange</item>-->
+        <!--        <item name="colorOnSurface">@color/primary_orange</item>-->
+        <item name="colorSurfaceVariant">@color/light_grey</item>
+
+        <!--        <item name="colorOutline">@color/primary_orange</item>-->
+    </style>
+</resources>
