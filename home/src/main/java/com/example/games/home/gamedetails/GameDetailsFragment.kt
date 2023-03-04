@@ -111,9 +111,9 @@ class GameDetailsFragment : Fragment() {
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
-            binding.imgFavorite.setImageDrawable(ContextCompat.getDrawable(requireContext(), com.example.games.home.R.drawable.ic_favorite))
+            binding.imgFavorite.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_favorite))
         } else {
-            binding.imgFavorite.setImageDrawable(ContextCompat.getDrawable(requireContext(), com.example.games.home.R.drawable.ic_not_favorite))
+            binding.imgFavorite.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_not_favorite))
         }
     }
 }
