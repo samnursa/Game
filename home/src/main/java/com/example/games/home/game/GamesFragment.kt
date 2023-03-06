@@ -66,13 +66,12 @@ class GamesFragment : Fragment() {
                     is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                     is Resource.Success -> {
                         binding.progressBar.visibility = View.GONE
-                        gamesAdapter.setData(game.data)
+                        gamesAdapter.submitList(game.data)
                         binding.rvGames.visibility = View.VISIBLE
                     }
                     is Resource.Error -> {
                         binding.progressBar.visibility = View.GONE
                         binding.emptyList.visibility = View.VISIBLE
-                        binding.emptyList.text = game.message
                     }
                 }
             }

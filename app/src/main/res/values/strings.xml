@@ -2,7 +2,6 @@
     <string name="app_name">games</string>
     <string name="search_hint">Search Games</string>
     <string name="txt_btn_retry">Retry</string>
-    <string name="txt_no_results">No Results</string>
     <string name="title_favorite">Favorite</string>
     <string name="txt_menu_home">Home</string>
     <string name="txt_menu_favorite">Favorite</string>

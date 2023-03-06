@@ -12,9 +12,6 @@
         android:theme="@style/Theme.Games"
         tools:targetApi="31">
         <activity
-            android:name="com.example.games.gamedetail.DetailGameActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -7,10 +7,12 @@ import com.example.games.core.data.source.remote.network.ApiResponse
 import com.example.games.core.data.source.remote.response.GameResponse
 import com.example.games.core.domain.model.Game
 import com.example.games.core.domain.repository.IGameRepository
-import com.example.games.core.utils.AppExecutors
+import com.example.games.core.utils.ContextProviders
 import com.example.games.core.utils.DataMapper
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,10 +20,11 @@ import javax.inject.Singleton
 class GamesRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
-    private val appExecutors: AppExecutors
+    //private val appExecutors: AppExecutors,
+    private val coroutineContext: ContextProviders
 ) : IGameRepository {
     override fun getAllGames(query: String?): Flow<Resource<List<Game>>> =
-        object : com.example.games.core.data.NetworkBoundResource<List<Game>, List<GameResponse>>(appExecutors) {
+        object : com.example.games.core.data.NetworkBoundResource<List<Game>, List<GameResponse>>() {
             override fun loadFromDB(): Flow<List<Game>> {
                 var queryBuilder = "SELECT * FROM games_table"
                 if(query != ""){
@@ -54,6 +57,11 @@ class GamesRepository @Inject constructor(
 
     override fun setFavoriteGame(game: Game, state: Boolean) {
         val gameEntity = DataMapper.mapDomainToEntity(game)
-        appExecutors.diskIO().execute { localDataSource.setFavoriteGame(gameEntity, state) }
+        CoroutineScope(coroutineContext.io).launch{
+            localDataSource.setFavoriteGame(gameEntity, state)
+        }
+//        appExecutors.diskIO().execute {
+//            localDataSource.setFavoriteGame(gameEntity, state)
+//        }
     }
 }

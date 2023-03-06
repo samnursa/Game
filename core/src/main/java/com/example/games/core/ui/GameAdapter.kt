@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -16,24 +18,37 @@ import com.google.android.material.chip.ChipGroup
 
 class GameAdapter(
     private val listener: (Game) -> Unit
-) : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
+) : ListAdapter<Game, GameAdapter.ListViewHolder>(TaskDiffCallBack()) {
 
-    private var listData = ArrayList<Game>()
+    //private var listData = ArrayList<Game>()
 
-    fun setData(newListData: List<Game>?) {
-        if (newListData == null) return
-        listData.clear()
-        listData.addAll(newListData)
+//    fun setData(newListData: List<Game>?) {
+//        if (newListData == null) return
+//        listData.clear()
+//        listData.addAll(newListData)
+//        notifyDataSetChanged()
+//    }
+
+    class TaskDiffCallBack : DiffUtil.ItemCallback<Game>() {
+        override fun areItemsTheSame(oldItem: Game, newItem: Game): Boolean {
+            return oldItem.id == newItem.id;
+        }
+
+        override fun areContentsTheSame(oldItem: Game, newItem: Game): Boolean {
+            return oldItem == newItem
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_games, parent, false))
 
-    override fun getItemCount() = listData.size
+    //override fun getItemCount() = listData.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val data = listData[position]
-        holder.bind(data, listener)
+        val games = getItem(position)
+        if (games != null) {
+            holder.bind(games, listener)
+        }
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

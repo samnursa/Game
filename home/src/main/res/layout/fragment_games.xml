@@ -51,16 +51,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <TextView android:id="@+id/emptyList"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/txt_no_results"
-        android:textSize="16sp"
-        android:visibility="gone"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/emptyList"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="emptybox.json"
+        app:lottie_loop="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

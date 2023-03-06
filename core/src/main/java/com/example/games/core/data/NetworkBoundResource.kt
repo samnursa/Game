@@ -1,10 +1,9 @@
 package com.example.games.core.data
 
 import com.example.games.core.data.source.remote.network.ApiResponse
-import com.example.games.core.utils.AppExecutors
 import kotlinx.coroutines.flow.*
 
-abstract class NetworkBoundResource<ResultType, RequestType>(private val mExecutors: AppExecutors) {
+abstract class NetworkBoundResource<ResultType, RequestType> {
 
     private var result: Flow<Resource<ResultType>> = flow {
         emit(Resource.Loading())

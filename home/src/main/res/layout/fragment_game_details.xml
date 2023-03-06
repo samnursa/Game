@@ -191,6 +191,7 @@
             tools:itemCount="4"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_store"
-            tools:orientation="horizontal" />
+            tools:orientation="horizontal"
+            android:paddingBottom="40dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

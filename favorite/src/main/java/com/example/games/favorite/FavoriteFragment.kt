@@ -59,16 +59,13 @@ class FavoriteFragment : Fragment() {
                 .fromUri("android-app://com.example.games.app/game_details/${it.id}".toUri())
                 .build()
             navController.navigate(request)
-
-//            val intent = Intent(activity, DetailGameActivity::class.java)
-//            intent.putExtra(DetailGameActivity.EXTRA_DATA, it)
-//            startActivity(intent)
         }
+
         binding.rvGames.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.rvGames.setHasFixedSize(true)
         binding.rvGames.adapter = gamesAdapter
         viewModel.favoriteGame.observe(viewLifecycleOwner) { game ->
-            gamesAdapter.setData(game)
+            gamesAdapter.submitList(game)
             binding.emptyList.visibility = if (game.isNotEmpty()) View.GONE else View.VISIBLE
         }
     }
