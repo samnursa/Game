@@ -15,6 +15,7 @@ import com.example.games.core.data.Resource
 import com.example.games.core.ui.GameAdapter
 import com.example.games.home.databinding.FragmentGamesBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class GamesFragment : Fragment() {
@@ -67,6 +68,7 @@ class GamesFragment : Fragment() {
                     is Resource.Success -> {
                         binding.progressBar.visibility = View.GONE
                         gamesAdapter.submitList(game.data)
+                        Timber.d(game.data?.size.toString())
                         binding.rvGames.visibility = View.VISIBLE
                     }
                     is Resource.Error -> {

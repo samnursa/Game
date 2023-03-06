@@ -14,6 +14,8 @@
         <entry key="app/src/main/res/layout/item_chip.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.358148193359375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/bg_container_placeholder.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/bg_image_placeholder.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_back.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_favorite.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_home.xml" value="0.1" />
@@ -23,6 +25,7 @@
         <entry key="core/src/main/res/drawable/ic_setting.xml" value="0.1" />
         <entry key="core/src/main/res/layout/item_chip.xml" value="0.18645833333333334" />
         <entry key="core/src/main/res/layout/item_games.xml" value="0.18645833333333334" />
+        <entry key="core/src/main/res/layout/item_list_placeholder.xml" value="0.18231201171875" />
         <entry key="favorite/src/main/res/layout/fragment_favorite.xml" value="0.24739583333333334" />
         <entry key="home/src/main/res/drawable/ic_app_store.xml" value="0.1" />
         <entry key="home/src/main/res/drawable/ic_back.xml" value="0.1" />
@@ -43,7 +46,7 @@
         <entry key="home/src/main/res/drawable/ic_steam.xml" value="0.1" />
         <entry key="home/src/main/res/drawable/ic_xbox.xml" value="0.1" />
         <entry key="home/src/main/res/layout/fragment_game_details.xml" value="0.32882537841796877" />
-        <entry key="home/src/main/res/layout/fragment_games.xml" value="0.18645833333333334" />
+        <entry key="home/src/main/res/layout/fragment_games.xml" value="0.2689544677734375" />
         <entry key="home/src/main/res/layout/item_screenshot.xml" value="0.620654296875" />
         <entry key="home/src/main/res/layout/item_store.xml" value="0.23125" />
       </map>

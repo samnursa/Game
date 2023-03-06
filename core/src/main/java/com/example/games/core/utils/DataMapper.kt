@@ -17,20 +17,20 @@ object DataMapper {
             }
 
             val screenshots = ArrayList<GameEntity.Screenshots>()
-            it.short_screenshots.map{ screenShot ->
+            it.short_screenshots?.map{ screenShot ->
                 screenshots.add(
                     GameEntity.Screenshots(
-                        image = screenShot.image
+                        image = screenShot.image ?: ""
                     ))
             }
 
             val stores = ArrayList<GameEntity.Stores>()
-            it.stores.map{ store ->
+            it.stores?.map{ store ->
                 stores.add(
                     GameEntity.Stores(
                         GameEntity.Stores.Store(
-                            slug = store.store.slug ?: "",
-                            domain = store.store.domain ?: ""
+                            slug = store.store?.slug ?: "",
+                            domain = store.store?.domain ?: ""
                         )
                     )
                 )

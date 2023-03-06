@@ -8,19 +8,19 @@ data class GameResponse(
     val rating: Float,
     val genres: List<Genre>?,
     var updated: String,
-    var short_screenshots: List<Screenshots>,
-    var stores: List<Stores>
+    var short_screenshots: List<Screenshots>?,
+    var stores: List<Stores>?
 ){
     data class Genre(
         val name: String?
     )
 
     data class Screenshots(
-        val image: String
+        val image: String?
     )
 
     data class Stores(
-        val store: Store
+        val store: Store?
     ){
         data class Store(
             val slug: String?,
