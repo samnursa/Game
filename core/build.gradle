@@ -59,6 +59,10 @@ dependencies {
 
     //shimmer
     api "com.facebook.shimmer:shimmer:0.5.0"
+
+    //sqlchiper
+    implementation "net.zetetic:android-database-sqlcipher:4.4.3"
+    implementation "androidx.sqlite:sqlite-ktx:2.3.0"
 }
 
 kapt {

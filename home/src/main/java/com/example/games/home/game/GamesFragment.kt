@@ -68,7 +68,6 @@ class GamesFragment : Fragment() {
                     is Resource.Success -> {
                         binding.progressBar.visibility = View.GONE
                         gamesAdapter.submitList(game.data)
-                        Timber.d(game.data?.size.toString())
                         binding.rvGames.visibility = View.VISIBLE
                     }
                     is Resource.Error -> {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">api.rawg.io</domain>
+        <pin-set expiration="2023-05-18">
+            <pin digest="SHA-256">6i+nf58l8neEnNarZOvxiYfVbt2S2xurswGQQBBMa0U=</pin>
+            <pin digest="SHA-256">FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=</pin>
+            <pin digest="SHA-256">Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=</pin>
+        </pin-set>
+
+    </domain-config>
+</network-security-config>
