@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -21,6 +22,7 @@ class RemoteDataSource @Inject constructor(
                 val response = gameService.getGames(query)
                 val dataArray = response.results
                 if (dataArray.isNotEmpty()){
+                    Timber.d("check game : ${response.results}")
                     emit(ApiResponse.Success(response.results))
                 } else {
                     emit(ApiResponse.Empty)
